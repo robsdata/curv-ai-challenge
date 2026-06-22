@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background: #161616;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
