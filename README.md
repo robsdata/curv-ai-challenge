@@ -4,7 +4,7 @@ An internal "command center" for **Northwind Coffee**, a wholesale specialty roa
 
 Built for the Northwind OS Challenge. See **[NOTES.md](./NOTES.md)** for the decisions and reasoning behind the build.
 
-**Live demo:** _add your Vercel URL here after the first deploy._
+**Live demo:** https://curv-ai-challenge.vercel.app
 
 ## Quick start
 
@@ -19,12 +19,12 @@ Then open **http://localhost:3000**.
 
 ## Scripts
 
-| Command | What it does |
-| --- | --- |
-| `npm run dev` | Start the local dev server (http://localhost:3000) |
-| `npm run build` | Production build **+ full TypeScript type-check** |
+| Command         | What it does                                           |
+| --------------- | ------------------------------------------------------ |
+| `npm run dev`   | Start the local dev server (http://localhost:3000)     |
+| `npm run build` | Production build **+ full TypeScript type-check**      |
 | `npm run start` | Serve the production build locally (run `build` first) |
-| `npm run lint` | Run ESLint |
+| `npm run lint`  | Run ESLint                                             |
 
 > There is no automated test suite — the challenge didn't require one. `npm run build` is the gate: it type-checks every page and fails the build on any error, so it's the command to run to validate a change.
 
