@@ -1,5 +1,7 @@
 # Northwind Command Center — Build Notes
 
+**Live demo:** https://curv-ai-challenge.vercel.app
+
 A first working version of Northwind Coffee's internal "command center": a **Dashboard** to see how the business is doing at a glance, and a **Lead Triage** workflow to work through incoming wholesale inquiries — with supporting **Accounts** and **Contacts** views. It uses the sample data included in the repo as its database, runs entirely in the browser, and deploys to Vercel with no extra setup.
 
 ## What I focused on — and what I left for later
@@ -11,7 +13,7 @@ The goal was to deliver the two core pieces **fast and polished**, not to build 
 
 What I deliberately left out, and why: no login, no real database, and no automated tests. The brief said these weren't needed, and adding them would have slowed delivery without improving what's being evaluated. The "Add new record" buttons are present but marked as coming next, so the interface shows its full intended shape without over-building.
 
-On tooling: I used **Next.js** (the web framework) with **Material-UI**, a ready-made library of professional interface components. That choice is where most of the speed *and* the polish came from — I assembled proven building blocks (tables, charts, side panels) instead of rebuilding them. The app saves each user's changes (for example, marking a lead as contacted) directly in their browser, which is the simplest dependable approach at this stage.
+On tooling: I used **Next.js** (the web framework) with **Material-UI**, a ready-made library of professional interface components. That choice is where most of the speed _and_ the polish came from — I assembled proven building blocks (tables, charts, side panels) instead of rebuilding them. The app saves each user's changes (for example, marking a lead as contacted) directly in their browser, which is the simplest dependable approach at this stage.
 
 ## How I prioritize leads (Hot / Warm / Cold)
 
