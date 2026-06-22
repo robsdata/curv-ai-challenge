@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { Card, CardContent, Typography, Box, Skeleton } from '@mui/material';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { LineChart } from '@mui/x-charts/LineChart';
@@ -12,6 +12,7 @@ import inquiriesData from '../../data/inquiries.json';
 import accountsData from '../../data/accounts.json';
 import { UI, VIZ } from './palette';
 import { SectionLabel, StatCard, fmtUSD, fmtK, fmtPrice } from './ui';
+import { useMounted } from './useMounted';
 
 interface Sale {
   region: string;
@@ -126,8 +127,7 @@ export default function DashboardPage() {
 
   // Charts render client-only: MUI X Charts measure the container, which differs
   // between server and client and would otherwise trip React hydration.
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
 
   if (!salesData.length) {
     return <Typography sx={{ color: UI.muted }}>No data available.</Typography>;

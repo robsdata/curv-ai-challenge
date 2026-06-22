@@ -71,7 +71,6 @@ export default function LeadsPage() {
     const newHot = newOnes.filter((r) => effPriority(r) === 'Hot').length;
     const byStatus = STATUSES.map((s) => ({ label: titleCase(s), value: records.filter((r) => r.status === s).length, color: STATUS_COLORS[s].bg }));
     return { openCount: open.length, openVolume, newCount: newOnes.length, newHot, byStatus };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [records]);
 
   const editing = editId ? records.find((r) => r.id === editId) ?? null : null;

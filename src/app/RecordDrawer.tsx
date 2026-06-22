@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Drawer, Box, Typography, TextField, MenuItem, Button, Stack, IconButton, Divider } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { UI } from './palette';
@@ -27,11 +27,15 @@ export function RecordDrawer({
   onClose: () => void;
   onSave: (v: Record<string, unknown>) => void;
 }) {
-  const [draft, setDraft] = useState<Record<string, unknown>>({});
+  const [draft, setDraft] = useState<Record<string, unknown>>(() => (values ? { ...values } : {}));
+  const [prevValues, setPrevValues] = useState(values);
 
-  useEffect(() => {
-    if (values) setDraft({ ...values });
-  }, [values]);
+  // Reset the form when a different record is opened (adjusting state during
+  // render when a prop changes — React's recommended alternative to an effect).
+  if (values !== prevValues) {
+    setPrevValues(values);
+    setDraft(values ? { ...values } : {});
+  }
 
   const set = (k: string, v: unknown) => setDraft((d) => ({ ...d, [k]: v }));
 
